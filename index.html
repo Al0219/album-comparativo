@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TechCompare — Álbum comparativo de 100 categorías de productos tecnológicos. Compara CPUs, GPUs, smartphones, laptops y más, lado a lado con especificaciones detalladas.">
+  <meta name="description" content="TechCompare — Álbum comparativo de 98 categorías y 196 productos tecnológicos. Compara CPUs, GPUs, smartphones, laptops y más, lado a lado con especificaciones detalladas.">
   <meta name="keywords" content="comparativa tecnología, CPU, GPU, RAM, SSD, smartphone, laptop, componentes PC, comparar">
   <meta name="author" content="TechCompare">
   <meta property="og:title" content="TechCompare — Álbum Comparativo de Tecnología">
-  <meta property="og:description" content="Explora y compara 100 categorías de productos tecnológicos lado a lado.">
+  <meta property="og:description" content="Explora y compara 98 categorías y 196 productos tecnológicos lado a lado.">
   <title>TechCompare — Álbum Comparativo de Tecnología</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,7 @@
 
       <div class="search-wrapper" id="search-wrapper">
         <div class="search-bar" id="search-bar">
-          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" aria-hidden="true">
             <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
           </svg>
           <input
@@ -50,6 +50,17 @@
       </div>
 
       <div class="header-actions">
+        <div class="currency-switch" role="group" aria-label="Seleccionar moneda">
+          <button type="button" class="currency-btn active" data-currency="GTQ" aria-pressed="true" title="Precios en Quetzales guatemaltecos (GTQ, ref. Q7.80 x $1 USD)">
+            <span class="currency-flag" aria-hidden="true">🇬🇹</span>
+            <span class="currency-code">GTQ</span>
+          </button>
+          <button type="button" class="currency-btn" data-currency="USD" aria-pressed="false" title="Precios en Dólares estadounidenses (USD)">
+            <span class="currency-flag" aria-hidden="true">🇺🇸</span>
+            <span class="currency-code">USD</span>
+          </button>
+        </div>
+
         <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema claro/oscuro">
           <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
@@ -80,7 +91,7 @@
       <div class="hero-content">
         <div class="hero-badge" role="note">
           <span class="badge-dot"></span>
-          100 Categorías · 200 Productos · 10 Secciones
+          98 Categorías · 196 Productos · 10 Secciones
         </div>
         <h1 class="hero-title">
           Álbum Comparativo de<br>
@@ -91,12 +102,12 @@
         </p>
         <div class="hero-stats" aria-label="Estadísticas del catálogo">
           <div class="hero-stat">
-            <span class="stat-number" data-target="100" aria-label="100 categorías">0</span>
+            <span class="stat-number" data-target="98" aria-label="98 categorías">0</span>
             <span class="stat-label">Categorías</span>
           </div>
           <div class="hero-stat-divider" aria-hidden="true"></div>
           <div class="hero-stat">
-            <span class="stat-number" data-target="200" aria-label="200 productos">0</span>
+            <span class="stat-number" data-target="196" aria-label="196 productos">0</span>
             <span class="stat-label">Productos</span>
           </div>
           <div class="hero-stat-divider" aria-hidden="true"></div>
@@ -150,7 +161,7 @@
             </select>
           </div>
           <div class="results-count" aria-live="polite">
-            <span id="results-count">100 categorías</span>
+            <span id="results-count">98 categorías</span>
           </div>
         </div>
       </div>
@@ -262,6 +273,8 @@
       <div class="verdict-section" id="verdict-section">
         <div class="verdict-trophy" aria-hidden="true">🏆</div>
         <div class="verdict-body">
+          <p class="recommendation-label">Recomendación final</p>
+          <p class="recommendation-text" id="recommendation-text"></p>
           <h3 class="verdict-title">Veredicto</h3>
           <p class="verdict-text" id="verdict-text"></p>
         </div>
@@ -277,8 +290,8 @@
         <span class="logo-icon">⚡</span>
         <span class="logo-name">TechCompare</span>
       </div>
-      <p class="footer-text">Álbum comparativo de tecnología — 100 categorías · 200 productos · 10 secciones</p>
-      <p class="footer-disclaimer">Los precios son referencias aproximadas en USD. Las especificaciones pueden variar según la región y el año de lanzamiento.</p>
+      <p class="footer-text">Álbum comparativo de tecnología — 98 categorías · 196 productos · 10 secciones</p>
+      <p class="footer-disclaimer">Precios de referencia para Guatemala en Quetzales (GTQ, tasa estimada 1 USD ≈ Q7.80) y USD. Las especificaciones y disponibilidad local pueden variar según el distribuidor y región.</p>
     </div>
   </footer>
 
@@ -294,6 +307,7 @@
   <script src="js/data/accesorios.js"></script>
   <script src="js/data/smart.js"></script>
   <!-- Logic Scripts -->
+  <script src="js/currency.js"></script>
   <script src="js/search.js"></script>
   <script src="js/compare.js"></script>
   <script src="js/app.js"></script>
