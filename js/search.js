@@ -84,7 +84,9 @@
       smartphones: 'Smartphones', laptops: 'Laptops',
       tablets: 'Tablets', audio: 'Audio',
       almacenamiento: 'Almacenamiento', redes: 'Redes',
-      accesorios: 'Accesorios', smart: 'Smart Devices'
+      accesorios: 'Accesorios', smart: 'Smart Devices',
+      oficina: 'Oficina Tech', gaming: 'Consolas & Gaming', creadores: 'Streaming & Creadores',
+      hogar: 'Hogar Inteligente', cocina: 'Cocina Tech', movilidad: 'Movilidad Eléctrica'
     };
 
     autocompleteDD.innerHTML = items.map((cat, i) => `

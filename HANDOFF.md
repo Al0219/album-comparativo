@@ -3,8 +3,8 @@
 Documento operativo para retomar el proyecto sin repetir el diagnóstico. Actualizar las casillas y la fecha al terminar cada bloque de trabajo.
 
 **Entrega:** sábado 3 de octubre de 2026, 23:59  
-**Estado general:** MVP funcional; cifras, comparativas entre marcas, tabla completa y recomendación explícita corregidas. Aún faltan imágenes reales y pruebas visuales.  
-**Última actualización:** 30 de septiembre de 2026
+**Estado general:** Fase de expansión en marcha; Asignación de Compañero A (Oficina, Gaming, Creadores) 100% completada e integrada en main. 113 categorías, 226 productos, 13 secciones, 0 placeholders y compatibilidad total GTQ/USD.  
+**Última actualización:** 1 de octubre de 2026
 
 ---
 
@@ -14,24 +14,27 @@ Documento operativo para retomar el proyecto sin repetir el diagnóstico. Actual
 - [x] Galería de categorías, filtros por sección y complejidad, ordenamiento y búsqueda con autocompletado.
 - [x] Modal de comparación con dos productos, precios, especificaciones y veredicto.
 - [x] Tema claro/oscuro persistente mediante `localStorage`.
-- [x] Catálogo cargado desde diez archivos en `js/data/`.
-- [x] Validación de sintaxis correcta para todos los archivos JavaScript.
-- [x] Revisión de integridad: las categorías existentes tienen ID, dos productos, precios, imágenes, especificaciones y veredicto.
+- [x] Catálogo cargado desde 13 archivos en `js/data/`.
+- [x] Validación de sintaxis correcta para todos los archivos JavaScript (`node -c`).
+- [x] Revisión de integridad: 100% de las 113 categorías tienen ID, marcas distintas, precios, imágenes locales 1000×1000 px, especificaciones homogéneas y recomendación explícita.
 - [x] Plan de implementación actualizado en `PLAN.md` según los requisitos de la actividad.
+- [x] Asignación Compañero A completada: 15 categorías (Oficina, Gaming, Creadores), 30 imágenes oficiales procesadas y registradas en `IMAGE_SOURCES.md`, nuevas pestañas de filtro en `index.html` y badges en CSS.
+- [x] Optimización de layout del catálogo: Eliminado bloque intermedio de contadores en el hero; ancho de tarjetas ajustado (`minmax(300px, 1fr)`) en contenedor de 1760px para 5 columnas completas sin márgenes muertos laterales.
+- [x] Optimización de modal comparativo: Rediseño compacto manteniendo distribución vertical (Header -> Productos enfrentados -> Especificaciones -> Veredicto) visible en pantalla completa sin scroll.
 
 ## Estado real confirmado del catálogo
 
 | Métrica | Valor actual | Observación |
 |---|---:|---|
-| Categorías | 98 | La interfaz, metadatos y textos ya anuncian 98. |
-| Productos | 196 | La interfaz, metadatos y textos ya anuncian 196. |
-| Secciones | 10 | Correcto. |
-| Comparativas de marcas distintas | 98 | Cumplen el requisito. |
-| Comparativas de la misma marca | 0 | Corregido. |
+| Categorías | 113 | 98 base + 15 de Compañero A. |
+| Productos | 226 | 196 base + 30 de Compañero A. |
+| Secciones | 13 | 10 base + 3 de Compañero A (oficina, gaming, creadores). |
+| Comparativas de marcas distintas | 113 | 100% cumplen el requisito. |
+| Comparativas de la misma marca | 0 | Ninguna. |
 | Productos sin precio | 0 | Correcto. |
-| Productos sin URL de imagen | 0 | Correcto técnicamente, pero las URLs son marcadores. |
+| Productos sin imagen local | 0 | 100% cuentan con imagen local en `assets/images/`. |
 | Veredictos ausentes | 0 | Correcto. |
-| Recomendaciones visibles | 98 | Se calculan por ventajas; en empate, por precio. |
+| Recomendaciones visibles | 113 | 100% con campo explícito `recomendado: 'A' \| 'B'`. |
 
 ---
 
@@ -100,6 +103,26 @@ Comparativas identificadas:
 - [x] Revisar foco, contraste, navegación con teclado, accesibilidad (`prefers-reduced-motion`) e imágenes rotas.
 - [x] Añadir `README.md` con instrucciones, alcance y fuentes.
 - [x] Preparar capturas de inicio, filtro, comparativa, recomendación y versión móvil.
+
+### 6. Expansión Compañero A y Auditoría Visual de Imágenes
+
+- [x] Implementación de 15 categorías adicionales (IDs 099 a 113) en `oficina` (5), `gaming` (5) y `creadores` (5).
+- [x] Generación de archivos de datos: `js/data/oficina.js`, `js/data/gaming.js`, `js/data/creadores.js`.
+- [x] Integración de 3 nuevos botones de filtros de sección y actualización de contadores a 113 categorías y 226 productos.
+- [x] **Auditoría visual de producto y resolución de inconsistencias:**
+  - `sony-playstation-5-slim.jpg`: Reemplazado placeholder no disponible por fotografía de estudio oficial con mando DualSense (Best Buy SKU 6646419).
+  - `lenovo-legion-go.jpg`: Corregido SKU erróneo (era monitor MSI) por render auténtico de la consola portátil Lenovo Legion Go (Best Buy SKU 6559605).
+  - `nintendo-switch-oled.jpg`: Reemplazada foto con caja por fotografía limpia de consola con mandos Joy-Con blancos.
+  - `meta-quest-3.jpg`: Corregida imagen de altavoz LG por el visor Meta Quest 3 oficial con mandos Touch Plus (B&H SKU 1781297).
+  - `apple-vision-pro.jpg`: Corregida imagen de iPhone 15 Pro por fotografía de prensa oficial del visor de computación espacial Apple Vision Pro y batería externa (Apple Newsroom WWDC23).
+  - `samsung-the-freestyle-gen-2.jpg`: Corregido SKU erróneo (era disipador Corsair) por fotografía oficial del proyector Samsung The Freestyle 2ª Gen (Best Buy SKU 6552953).
+  - `elgato-stream-deck-plus.jpg`: Corregido SKU erróneo (era UPS Panamax) por fotografía oficial de consola Elgato Stream Deck + con diales y LCD (Best Buy SKU 6524801).
+  - `bambu-lab-a1.jpg` y `creality-ender-3-v3-ke.jpg`: Limpieza completa de etiquetas y banners comerciales sobre lienzo blanco puro 1000×1000 px.
+  - `epson-ecotank-l3250.jpg`: Reencuadre y ajuste de escala a proporciones óptimas.
+- [x] Todas las 30 imágenes de Compañero A validadas a 1000×1000 px, fondo `#FFFFFF`, peso optimizado (<150 KB) y registradas en `assets/IMAGE_SOURCES.md`.
+- [x] **Rediseño Ergonómico de Modal y Catálogo:**
+  - Modal comparativo organizado en arquitectura Split Dashboard (2 columnas): productos y veredicto a la izquierda, marcador y tabla a la derecha, garantizando visualización integral a simple vista con cero scroll en monitores de escritorio.
+  - Catálogo panorámico expandido a `min(1800px, 94vw)` con cuadrícula fluida de 5 a 6 columnas en monitores 1080p+, aprovechando armónicamente todo el espacio horizontal.
 
 ---
 

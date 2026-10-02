@@ -26,6 +26,9 @@
     tablets: 'hsl(28, 92%, 62%)', audio: 'hsl(328, 82%, 66%)',
     almacenamiento: 'hsl(44, 92%, 60%)', redes: 'hsl(174, 76%, 52%)',
     accesorios: 'hsl(215, 18%, 62%)', smart: 'hsl(0, 82%, 66%)',
+    oficina: 'hsl(205, 85%, 55%)', gaming: 'hsl(280, 85%, 65%)',
+    creadores: 'hsl(340, 85%, 62%)', hogar: 'hsl(140, 70%, 50%)',
+    cocina: 'hsl(15, 90%, 58%)', movilidad: 'hsl(160, 80%, 45%)'
   };
 
   const SECTION_LABELS = {
@@ -34,6 +37,8 @@
     tablets: '📟 Tablets', audio: '🎧 Audio',
     almacenamiento: '💾 Almacenamiento', redes: '🌐 Redes',
     accesorios: '🔌 Accesorios', smart: '📺 Smart Devices',
+    oficina: '🖨️ Oficina', gaming: '🎮 Gaming', creadores: '🎙️ Creadores',
+    hogar: '🏠 Hogar', cocina: '🍳 Cocina', movilidad: '🛴 Movilidad'
   };
 
   // ── Normalize (accent-insensitive search) ────────────────────────
@@ -242,6 +247,35 @@
   }
 
   function initCounters() {
+    const catalog = window.CATALOG || [];
+    const totalCats = catalog.length;
+    const totalProds = totalCats * 2;
+    const uniqueSections = new Set(catalog.map(c => c.seccion)).size;
+
+    const statNumbers = document.querySelectorAll('.stat-number');
+    if (statNumbers[0]) {
+      statNumbers[0].dataset.target = totalCats;
+      statNumbers[0].setAttribute('aria-label', `${totalCats} categorías`);
+    }
+    if (statNumbers[1]) {
+      statNumbers[1].dataset.target = totalProds;
+      statNumbers[1].setAttribute('aria-label', `${totalProds} productos`);
+    }
+    if (statNumbers[2]) {
+      statNumbers[2].dataset.target = uniqueSections;
+      statNumbers[2].setAttribute('aria-label', `${uniqueSections} secciones`);
+    }
+
+    const heroBadge = document.querySelector('.hero-badge');
+    if (heroBadge) {
+      heroBadge.innerHTML = `<span class="badge-dot"></span>${totalCats} Categorías · ${totalProds} Productos · ${uniqueSections} Secciones`;
+    }
+
+    const footerText = document.querySelector('.footer-text');
+    if (footerText) {
+      footerText.textContent = `Álbum comparativo de tecnología — ${totalCats} categorías · ${totalProds} productos · ${uniqueSections} secciones`;
+    }
+
     const counters = document.querySelectorAll('.stat-number[data-target]');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

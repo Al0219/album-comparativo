@@ -47,7 +47,9 @@
     smartphones: 'Smartphones', laptops: 'Laptops',
     tablets: 'Tablets', audio: 'Audio',
     almacenamiento: 'Almacenamiento', redes: 'Redes',
-    accesorios: 'Accesorios', smart: 'Smart Devices'
+    accesorios: 'Accesorios', smart: 'Smart Devices',
+    oficina: 'Oficina Tech', gaming: 'Consolas & Gaming', creadores: 'Streaming & Creadores',
+    hogar: 'Hogar Inteligente', cocina: 'Cocina Tech', movilidad: 'Movilidad Eléctrica'
   };
 
   // ── Helpers ─────────────────────────────────────────────────────
@@ -119,8 +121,8 @@
     loadImage(imgB, phB, pb.imagen, pb.nombre + ' - ' + pb.marca);
 
     // Score labels
-    scoreALabel.textContent = pa.marca;
-    scoreBLabel.textContent = pb.marca;
+    if (scoreALabel) scoreALabel.textContent = pa.marca;
+    if (scoreBLabel) scoreBLabel.textContent = pb.marca;
 
     // Specs + scores
     buildSpecs(cat);
@@ -244,8 +246,8 @@
     specsTable.innerHTML = priceRow + rows.join('');
 
     // Update score
-    scoreAWins.textContent = `${winsA} ventaja${winsA !== 1 ? 's' : ''}`;
-    scoreBWins.textContent = `${winsB} ventaja${winsB !== 1 ? 's' : ''}`;
+    if (scoreAWins) scoreAWins.textContent = `${winsA} ventaja${winsA !== 1 ? 's' : ''}`;
+    if (scoreBWins) scoreBWins.textContent = `${winsB} ventaja${winsB !== 1 ? 's' : ''}`;
 
     // Recommendation
     const recommendation = getRecommendation(cat, winsA, winsB);

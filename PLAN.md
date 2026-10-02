@@ -7,7 +7,7 @@
 
 Desarrollar y entregar una aplicación web interactiva en español que permita explorar y comparar dispositivos tecnológicos de consumo moderno. Cada comparativa enfrenta **dos productos de marcas rivales directas**, exhibiendo imágenes reales oficiales estandarizadas, precios de referencia locales en **Quetzales guatemaltecos (GTQ)** con alternativa en Dólares (USD), tabla de especificaciones homogénea, identificación de ventajas y una recomendación final inequívoca.
 
-- **Estado Actual Completado:** 98 categorías · 196 productos · 10 secciones temáticas · Divisa GTQ/USD interactiva · 0 imágenes placeholder.
+- **Estado Actual Completado:** 113 categorías · 226 productos · 13 secciones temáticas (Compañero A completado al 100%) · Divisa GTQ/USD interactiva · 0 imágenes placeholder · Catálogo 5 columnas optimizado sin desperdicio lateral · Modal comparativo sin scroll integrado.
 - **Nueva Meta con Expansión:** **128 categorías · 256 productos · 16 secciones temáticas**.
 - **Metodología de Trabajo:** División equitativa y paralela para **2 Desarrolladores** (15 categorías cada uno) con aislamiento de archivos para garantizar **0 conflictos de Git**.
 
@@ -277,6 +277,9 @@ main (98 categorías) ────┤                                           
 - [x] **Fase 3 — Recomendaciones y Veredictos:** Campo `recomendado` visible y tabla de especificaciones con unión de claves.
 - [x] **Fase 4 — Experiencia de Usuario y Accesibilidad:** Filtros, búsqueda, atajos de teclado y modo claro/oscuro validados.
 - [x] **Fase 5 — Selector de Divisa GTQ / USD:** Motor `js/currency.js` con conversión en tiempo real a Quetzales guatemaltecos por defecto y selector interactivo en el encabezado.
+- [x] **Fase 6 — Expansión Compañero A (Oficina, Gaming & Creadores):** 15 categorías añadidas (IDs 099 al 113), 30 productos con marcas diferentes, 30 imágenes oficiales en 1000×1000 px (#FFFFFF), registro en `assets/IMAGE_SOURCES.md`, botones de filtro en `index.html` y contadores sincronizados. Catálogo activo en 113 categorías y 226 productos.
+- [x] **Auditoría Visual y Corrección de Imágenes de Producto:** Corrección exhaustiva y reemplazo por fotografías y renders oficiales de estudio sobre lienzo blanco puro 1000×1000 px para: Sony PS5 Slim (reemplazo de placeholder por fotografía de consola y DualSense SKU 6646419), Nintendo Switch OLED (reemplazo de caja por render limpio de consola), Lenovo Legion Go (corrección de monitor por consola handheld SKU 6559605), Meta Quest 3 (reemplazo de altavoz LG por visor y mandos Touch Plus), Apple Vision Pro (reemplazo de iPhone por visor y batería de Apple Newsroom WWDC23), Samsung The Freestyle 2ª Gen (reemplazo de disipador por proyector SKU 6552953), Elgato Stream Deck + (reemplazo de SAI/UPS por consola con diales y LCD), Bambu Lab A1 y Creality Ender-3 V3 KE (limpieza de stickers y banners publicitarios sobre fondo blanco puro) y Epson EcoTank L3250 (reecuadre y optimización de escala).
+- [x] **Optimización Ergonómica de UI y Vista Panorámica:** Modal comparativo rediseñado a Split Dashboard de 2 columnas (productos y veredicto a la izquierda, marcador y tabla a la derecha) garantizando visualización completa sin scroll en pantallas de escritorio. Cuadrícula del catálogo expandida a 1800px / 94vw eliminando márgenes vacíos y mostrando 5 a 6 columnas fluidas en pantallas panorámicas.
 
 ---
 
