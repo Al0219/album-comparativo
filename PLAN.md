@@ -7,8 +7,8 @@
 
 Desarrollar y entregar una aplicación web interactiva en español que permita explorar y comparar dispositivos tecnológicos de consumo moderno. Cada comparativa enfrenta **dos productos de marcas rivales directas**, exhibiendo imágenes reales oficiales estandarizadas, precios de referencia locales en **Quetzales guatemaltecos (GTQ)** con alternativa en Dólares (USD), tabla de especificaciones homogénea, identificación de ventajas y una recomendación final inequívoca.
 
-- **Estado Actual Completado:** 113 categorías · 226 productos · 13 secciones temáticas (Compañero A completado al 100%) · Divisa GTQ/USD interactiva · 0 imágenes placeholder · Catálogo 5 columnas optimizado sin desperdicio lateral · Modal comparativo sin scroll integrado.
-- **Nueva Meta con Expansión:** **128 categorías · 256 productos · 16 secciones temáticas**.
+- **Estado Actual Completado:** 98 categorías · 196 productos · 10 secciones temáticas · Divisa GTQ/USD interactiva · 0 imágenes placeholder.
+- **Resultado de la Expansión:** **133 categorías · 266 fichas de producto · 17 secciones temáticas**, incluyendo 5 comparativas adicionales de seguridad tecnológica.
 - **Metodología de Trabajo:** División equitativa y paralela para **2 Desarrolladores** (15 categorías cada uno) con aislamiento de archivos para garantizar **0 conflictos de Git**.
 
 ---
@@ -253,7 +253,7 @@ window.CATALOG.push({
 
 ```
                          ┌── feature/oficina-gaming-creadores (Dev A) ──┐
-main (98 categorías) ────┤                                               ├──> main (128 categorías)
+main (98 categorías) ────┤                                               ├──> main (133 categorías)
                          └── feature/hogar-cocina-movilidad (Dev B) ────┘
 ```
 
@@ -261,7 +261,7 @@ main (98 categorías) ────┤                                           
 - **Dev A edita exclusivamente:**
   - `js/data/oficina.js`, `js/data/gaming.js`, `js/data/creadores.js`
   - `assets/images/oficina/*`, `gaming/*`, `creadores/*`
-  - Ajustes de UI en `index.html` (nuevas pestañas `#section-tabs` y contadores `128/256/16`) y `css/styles.css`.
+  - Ajustes de UI en `index.html` (nuevas pestañas `#section-tabs` y contadores finales `133/266/17`) y `css/styles.css`.
 - **Dev B edita exclusivamente:**
   - `js/data/hogar.js`, `js/data/cocina.js`, `js/data/movilidad.js`
   - `assets/images/hogar/*`, `cocina/*`, `movilidad/*`
@@ -277,18 +277,15 @@ main (98 categorías) ────┤                                           
 - [x] **Fase 3 — Recomendaciones y Veredictos:** Campo `recomendado` visible y tabla de especificaciones con unión de claves.
 - [x] **Fase 4 — Experiencia de Usuario y Accesibilidad:** Filtros, búsqueda, atajos de teclado y modo claro/oscuro validados.
 - [x] **Fase 5 — Selector de Divisa GTQ / USD:** Motor `js/currency.js` con conversión en tiempo real a Quetzales guatemaltecos por defecto y selector interactivo en el encabezado.
-- [x] **Fase 6 — Expansión Compañero A (Oficina, Gaming & Creadores):** 15 categorías añadidas (IDs 099 al 113), 30 productos con marcas diferentes, 30 imágenes oficiales en 1000×1000 px (#FFFFFF), registro en `assets/IMAGE_SOURCES.md`, botones de filtro en `index.html` y contadores sincronizados. Catálogo activo en 113 categorías y 226 productos.
-- [x] **Auditoría Visual y Corrección de Imágenes de Producto:** Corrección exhaustiva y reemplazo por fotografías y renders oficiales de estudio sobre lienzo blanco puro 1000×1000 px para: Sony PS5 Slim (reemplazo de placeholder por fotografía de consola y DualSense SKU 6646419), Nintendo Switch OLED (reemplazo de caja por render limpio de consola), Lenovo Legion Go (corrección de monitor por consola handheld SKU 6559605), Meta Quest 3 (reemplazo de altavoz LG por visor y mandos Touch Plus), Apple Vision Pro (reemplazo de iPhone por visor y batería de Apple Newsroom WWDC23), Samsung The Freestyle 2ª Gen (reemplazo de disipador por proyector SKU 6552953), Elgato Stream Deck + (reemplazo de SAI/UPS por consola con diales y LCD), Bambu Lab A1 y Creality Ender-3 V3 KE (limpieza de stickers y banners publicitarios sobre fondo blanco puro) y Epson EcoTank L3250 (reecuadre y optimización de escala).
-- [x] **Optimización Ergonómica de UI y Vista Panorámica:** Modal comparativo rediseñado a Split Dashboard de 2 columnas (productos y veredicto a la izquierda, marcador y tabla a la derecha) garantizando visualización completa sin scroll en pantallas de escritorio. Cuadrícula del catálogo expandida a 1800px / 94vw eliminando márgenes vacíos y mostrando 5 a 6 columnas fluidas en pantallas panorámicas.
 
 ---
 
-## 9. Lista Final de Verificación de Entrega (128 Categorías)
+## 9. Lista Final de Verificación de Entrega (133 Categorías)
 
-- [ ] Las 128 comparativas muestran dos marcas diferentes (100%).
-- [ ] Los 256 productos cuentan con imagen real oficial en 1000×1000 px sobre fondo blanco puro.
-- [ ] Los precios se visualizan en Quetzales (`Q XX,XXX.XX GTQ`) por defecto y conmutan a Dólares con el selector.
-- [ ] Cada categoría incluye recomendación visible y justificada.
-- [ ] Las 16 secciones temáticas cuentan con botón de filtro activo y color asignado.
-- [ ] El script de verificación reporta 0 imágenes faltantes y 0 errores en consola.
-- [ ] `README.md` e `IMAGE_SOURCES.md` actualizados con la totalidad del repertorio.
+- [x] Las 133 comparativas muestran dos marcas diferentes (100%).
+- [x] Las 266 fichas de producto cuentan con una imagen local; las fuentes de la expansión están en `assets/EXPANSION_IMAGE_SOURCES.md`.
+- [x] Los precios se visualizan en Quetzales (`Q XX,XXX.XX GTQ`) por defecto y conmutan a Dólares con el selector.
+- [x] Cada categoría incluye recomendación visible y justificada.
+- [x] Las 17 secciones temáticas cuentan con botón de filtro activo y color asignado.
+- [x] El script de verificación reporta 0 imágenes faltantes y 0 errores en las categorías nuevas.
+- [x] `README.md` y los registros de fuentes de imágenes están actualizados.

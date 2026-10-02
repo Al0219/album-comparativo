@@ -49,7 +49,8 @@
     almacenamiento: 'Almacenamiento', redes: 'Redes',
     accesorios: 'Accesorios', smart: 'Smart Devices',
     oficina: 'Oficina Tech', gaming: 'Consolas & Gaming', creadores: 'Streaming & Creadores',
-    hogar: 'Hogar Inteligente', cocina: 'Cocina Tech', movilidad: 'Movilidad Eléctrica'
+    hogar: 'Hogar Inteligente', cocina: 'Cocina Tech', movilidad: 'Movilidad Eléctrica',
+    seguridad: 'Seguridad Inteligente'
   };
 
   // ── Helpers ─────────────────────────────────────────────────────

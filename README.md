@@ -6,7 +6,7 @@ Aplicación web interactiva en español para explorar y comparar componentes de 
 
 ## 🚀 Características Principales
 
-- **98 Categorías y 196 Productos:** Catálogo completo organizado en 10 secciones temáticas:
+- **133 Categorías y 266 Productos:** Catálogo completo organizado en 17 secciones temáticas:
   - 🧠 **Componentes Internos:** Procesadores (CPU), Tarjetas Gráficas (GPU), Placas Madre, Memoria RAM, Almacenamiento SSD/HDD, Fuentes de Poder (PSU) y Refrigeración Líquida / Aire.
   - 🖥️ **Periféricos Externos:** Monitores (1080p, 1440p, 4K, Ultrawide), Teclados (mecánicos y de membrana), Ratones (gaming y oficina), Webcams, Auriculares, Bocinas, Hubs USB y Docks Thunderbolt.
   - 💻 **Laptops y Portátiles:** Ultrabooks, Gaming, Productividad y 2-en-1.
@@ -15,9 +15,16 @@ Aplicación web interactiva en español para explorar y comparar componentes de 
   - ⌚ **Tecnología Inteligente:** Smartwatches, Smart Displays, Dispositivos de Streaming, Drones y Cámaras de Acción.
   - 🌐 **Redes y Conectividad:** Routers Wi-Fi 6/6E, Sistemas Mesh y Switches Gigabit administrables/no administrables.
   - 🔌 **Accesorios de Productividad:** Soportes ergonómicos, cargadores GaN y sistemas UPS.
+  - 🖨️ **Oficina:** Impresoras, escáneres, etiquetadoras e impresión 3D.
+  - 🎮 **Gaming:** Consolas de salón, portátiles, realidad mixta y proyectores.
+  - 🎙️ **Creadores:** Cámaras, micrófonos, interfaces, controladores y gimbals.
+  - 🏠 **Hogar:** Limpieza, clima, energía e iluminación inteligente.
+  - 🍳 **Cocina:** Freidoras, cafeteras, microondas y cocción sous vide.
+  - 🛴 **Movilidad y Salud:** Scooters, anillos, cuidado dental y personal.
+  - 🛡️ **Seguridad:** Cámaras, timbres, alarmas, llaves FIDO2 y dashcams.
 
-- **Comparativa Estricta Entre Marcas Diferentes:** El 100% de las 98 categorías compara productos de fabricantes competidores directos (Intel vs. AMD, NVIDIA vs. AMD, Apple vs. Samsung, Logitech vs. Razer, etc.).
-- **Imágenes 100% Reales y Verificadas:** Cero imágenes genéricas o generadas por IA. Todas las fotografías corresponden al modelo exacto y fabricante, optimizadas localmente en WebP/JPEG (<1200px, compresión de alta calidad). Las fuentes completas se documentan en [`assets/IMAGE_SOURCES.md`](assets/IMAGE_SOURCES.md).
+- **Comparativa Estricta Entre Marcas Diferentes:** El 100% de las 133 categorías compara productos de fabricantes competidores directos (Intel vs. AMD, NVIDIA vs. AMD, Apple vs. Samsung, Logitech vs. Razer, etc.).
+- **Recursos visuales locales y trazables:** El catálogo base conserva fotografías verificadas. La expansión usa fotografías solo cuando el modelo pudo comprobarse y fichas SVG rotuladas para el resto, evitando mostrar imágenes incorrectas. Las fuentes se documentan en [`assets/IMAGE_SOURCES.md`](assets/IMAGE_SOURCES.md) y [`assets/EXPANSION_IMAGE_SOURCES.md`](assets/EXPANSION_IMAGE_SOURCES.md).
 - **Recomendación Explícita:** Cada comparativa incluye un veredicto estructurado y un badge destacado indicando el producto recomendado y su justificación técnica/económica.
 - **Tabla de Especificaciones Dinámica:** Muestra la unión completa de atributos técnicos sin ocultar datos específicos de ninguna marca, resaltando ganadores y ventajas por característica.
 - **Interfaz Moderna y Accesible:**
@@ -62,7 +69,14 @@ album-comparativo/
 │       ├── redes.js            # Routers, Mesh, Switches de red
 │       ├── almacenamiento.js   # Discos duros y SSDs
 │       ├── audio.js            # Dispositivos de audio y sonido
-│       └── accesorios.js       # Soportes, UPS y accesorios de escritorio
+│       ├── accesorios.js       # Soportes, UPS y accesorios de escritorio
+│       ├── oficina.js          # Impresión, escaneo y etiquetado
+│       ├── gaming.js           # Consolas, visores y proyectores
+│       ├── creadores.js        # Producción audiovisual y streaming
+│       ├── hogar.js            # Electrodomésticos y domótica
+│       ├── cocina.js           # Cocina conectada
+│       ├── movilidad.js        # Movilidad y salud tecnológica
+│       └── seguridad.js        # Seguridad doméstica y digital
 └── assets/
     ├── IMAGE_SOURCES.md        # Registro de fuentes oficiales y licencias de imágenes
     └── images/                 # Fotografías reales organizadas por categoría
@@ -112,7 +126,7 @@ No se requieren gestores de paquetes ni pasos de compilación:
 
 Para comprobar la validez de los scripts del proyecto:
 ```bash
-node -c js/*.js js/data/*.js
+node scripts/check-catalog.js
 ```
 
 Para verificar que no existen marcadores de posición (`placehold.co`):

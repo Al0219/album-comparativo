@@ -28,7 +28,8 @@
     accesorios: 'hsl(215, 18%, 62%)', smart: 'hsl(0, 82%, 66%)',
     oficina: 'hsl(205, 85%, 55%)', gaming: 'hsl(280, 85%, 65%)',
     creadores: 'hsl(340, 85%, 62%)', hogar: 'hsl(140, 70%, 50%)',
-    cocina: 'hsl(15, 90%, 58%)', movilidad: 'hsl(160, 80%, 45%)'
+    cocina: 'hsl(15, 90%, 58%)', movilidad: 'hsl(160, 80%, 45%)',
+    seguridad: 'hsl(208, 16%, 65%)'
   };
 
   const SECTION_LABELS = {
@@ -38,7 +39,8 @@
     almacenamiento: '💾 Almacenamiento', redes: '🌐 Redes',
     accesorios: '🔌 Accesorios', smart: '📺 Smart Devices',
     oficina: '🖨️ Oficina', gaming: '🎮 Gaming', creadores: '🎙️ Creadores',
-    hogar: '🏠 Hogar', cocina: '🍳 Cocina', movilidad: '🛴 Movilidad'
+    hogar: '🏠 Hogar', cocina: '🍳 Cocina', movilidad: '🛴 Movilidad',
+    seguridad: '🛡️ Seguridad'
   };
 
   // ── Normalize (accent-insensitive search) ────────────────────────
